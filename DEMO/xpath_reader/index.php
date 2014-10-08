@@ -61,16 +61,16 @@ foreach ($trs as $tr) {
 		$json_item_data = array();
 		
 		$index = 0;
-		//$tag =array("region","name","code","phone","timediff","others");
+		$tag =array("region","name","code","phone","timediff","others");
 		
 		foreach ($tds as $td) {
 			if($td->font){
 				$cont = $td->font;
-				$json_item_data[$index] = trim($cont."");
-				//$json_item_data[$tag[$index]] = trim($cont."");
+				//$json_item_data[$index] = trim($cont."");
+				$json_item_data[$tag[$index]] = trim($cont."");
 			}else{
-				$json_item_data[$index] =  trim($td."");
-				//$json_item_data[$tag[$index]] =  trim($td."");
+				//$json_item_data[$index] =  trim($td."");
+				$json_item_data[$tag[$index]] =  trim($td."");
 			}
 			$index +=1;
 		}
