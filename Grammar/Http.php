@@ -6,7 +6,7 @@
  * @version $Id$
  * @copyright 2011
  */
-phpinfo();
+//phpinfo();
 echo $_POST["name"]; 
 echo $_POST["age"]; 
 ?> 
