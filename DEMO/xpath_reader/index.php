@@ -2,7 +2,9 @@
 
 //ÔÊĞí¿çÓò·ÃÎÊ
 header("Access-Control-Allow-Origin: *");
-header("Content-type: text/html; charset=utf-8"); 
+//header("Content-type: text/html; charset=utf-8"); 
+
+header('Content-type: text/json');
 ?>
 
 <?php
@@ -57,14 +59,18 @@ foreach ($trs as $tr) {
 		$tds = $tr->td;
 		
 		$json_item_data = array();
+		
 		$index = 0;
+		//$tag =array("region","name","code","phone","timediff","others");
 		
 		foreach ($tds as $td) {
 			if($td->font){
 				$cont = $td->font;
 				$json_item_data[$index] = trim($cont."");
+				//$json_item_data[$tag[$index]] = trim($cont."");
 			}else{
 				$json_item_data[$index] =  trim($td."");
+				//$json_item_data[$tag[$index]] =  trim($td."");
 			}
 			$index +=1;
 		}
